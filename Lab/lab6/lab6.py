@@ -3,22 +3,22 @@ from LinkedStack import LinkedStack
 def is_balanced(exp):
     s = LinkedStack()
 
-    for character in exp:
-        if character in ['(','[','{']:
-            s.push(character)
+    for symbol in exp:
+        if symbol in ['(','[','{']:
+            s.push(symbol)
 
-        elif character == '}':
+        elif symbol == '}':
             if s.is_empty() or s.peek() != '{':
                 return False
             else:
                 s.pop()
 
-        elif character == ')':
+        elif symbol == ')':
             if s.is_empty() or s.peek() != '(':
                 return False
             else:
                 s.pop()
-        elif character == ']':
+        elif symbol == ']':
             if s.is_empty() or s.peek() != '[':
                 return False
             else:
@@ -52,20 +52,19 @@ def convert_to_postfix(infix_exp):
     if current_symbol:
         symbols.append(current_symbol)
 
-    for symbol in symbols:
-        if symbol.isdigit():
-            postfix.append(symbol)
+    for character in symbols:
+        if character.isdigit():
+            postfix.append(character)
 
-        elif symbol in "+-*/^":
-            while (not stack.is_empty() and stack.peek() in "+-*/^" and
-                   precedence[symbol] <= precedence[stack.peek()]):
+        elif character in "+-*/^":
+            while (not stack.is_empty() and stack.peek() in "+-*/^" and precedence[character] <= precedence[stack.peek()]):
                 postfix.append(stack.pop())
-            stack.push(symbol)
+            stack.push(character)
 
-        elif symbol == '(':
-            stack.push(symbol)
+        elif character == '(':
+            stack.push(character)
 
-        elif symbol == ')':
+        elif character == ')':
             while (not stack.is_empty() and stack.peek() != '('):
                 postfix.append(stack.pop())
             if not stack.is_empty() and stack.peek() == '(':
