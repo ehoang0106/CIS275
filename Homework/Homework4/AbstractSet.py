@@ -1,16 +1,24 @@
 
 
 class AbstractSet:
-    def add(self, item):
-        raise "Not Implemented"
+    # def add(self, item):
+    #     raise "Not Implemented"
     
-    def remove(self, item):
-        raise "Not Implemented"
+    # def remove(self, item):
+    #     raise "Not Implemented"
 
+    # def __iter__(self):
+    #     raise "Not Implemented"
+        
+    # def __contains__(self, item):
+    #     raise "Not Implemented"
+    
+    # def __str__(self):
+    #     raise "Not Implemented"
     
 
-    def is_empty(self):
-        raise "Not Implemented"
+    # def is_empty(self):
+    #     raise "Not Implemented"
 
 
     def intersection(self, other):
@@ -35,11 +43,4 @@ class AbstractSet:
         return new_set
     
 
-    def __iter__(self):
-        raise "Not Implemented"
-        
-    def __contains__(self, item):
-        raise "Not Implemented"
     
-    def __str__(self):
-        raise "Not Implemented"
